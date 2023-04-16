@@ -1,10 +1,12 @@
-package Controllers;
+package repositories;
 
-import Models.Model;
+
+import models.Model;
 
 import java.util.HashMap;
 
-interface Controllers<E, T extends Model<E>> {
+public interface Repository<E,T extends Model<E>> {
+
 	void add(T item);
 
 	void remove(T item);
@@ -15,5 +17,7 @@ interface Controllers<E, T extends Model<E>> {
 
 	boolean contains(E id);
 
-	HashMap<E,T> getAll();
+	HashMap<String, T> getAll();
 }
+
+
